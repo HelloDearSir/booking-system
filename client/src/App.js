@@ -12,6 +12,7 @@ function App() {
     }
   ])
 
+  
   const [movie, setMovie] = useState(
     {
       title: '',
