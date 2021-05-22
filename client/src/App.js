@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
+import Router from './Router';
+ 
 
 function App() {
   const [movies, setMovies] = useState([
@@ -59,7 +61,9 @@ function App() {
   }
 
   return (
+  
     <div className="App">
+        <Router/>
       <h1>Add Movie</h1>
       <form>
         <input onChange={handleChange} name="title" value={movie.title}></input>
@@ -78,7 +82,7 @@ function App() {
           </div>
         ) 
       })}
-      
+    
     </div>
   );
 }
