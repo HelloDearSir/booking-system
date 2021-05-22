@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Movies from './Movies';
  
 import Navbar from "./Navbar";
+import Todo from "./Todo";
  
 function Router() {
  
@@ -12,8 +13,8 @@ function Router() {
       <Switch>
         <Route exact path="/"> </Route>
         <Route path="/Movies"> <Movies/> </Route>
-      
-       </Switch>
+        <Route path = "/Todo"> <Todo/> </Route> 
+      </Switch>
     </BrowserRouter>
   );
 }
