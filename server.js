@@ -21,6 +21,14 @@ const movieSchema = {
 
 const Movie = mongoose.model("Movie", movieSchema);
 
+const TodoSchema = {
+    text: String
+}
+
+const todos = mongoose.model("todos", TodoSchema); 
+
+
+
 //API routes
 app.get('/movies', function(req, res) {
     Movie.find().then(movies => res.json(movies));
@@ -52,6 +60,20 @@ app.delete('/delete/:id', function(req, res) {
         }
     })
 });
+
+var test = "hello"
+app.get("/Todos", function(req, res) {
+    todos.find().then(text => res.json(text));
+})
+
+app.post("/newtodo", function(req,res) {
+    const text = req.body.text; 
+
+    const newTodo = new todos({
+        text
+    });
+    newTodo.save();
+})
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
