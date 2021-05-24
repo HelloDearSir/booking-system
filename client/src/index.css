@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.btn:hover, .btn-large:hover, .btn-small:hover,.btn, .btn-large, .btn-small {
+  background-color: #265a88 !important;
+  background-position: 0 -15px;
+} 
+
+.postionButtons {
+  margin-top: 15px;
+}
+
+.postionButton {
+  margin-top: -9px;
+}
+ 

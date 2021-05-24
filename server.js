@@ -61,6 +61,20 @@ app.delete('/delete/:id', function(req, res) {
     })
 });
 
+
+app.delete('/deleting/:id', function(req, res) {
+    const id = req.params.id;
+    todos.findByIdAndDelete({_id: id}, function(err) {
+        if(!err) {
+            console.log("movie deleted");
+        } else {
+            console.log(err);
+        }
+    })
+}); 
+
+
+
 var test = "hello"
 app.get("/Todos", function(req, res) {
     todos.find().then(text => res.json(text));

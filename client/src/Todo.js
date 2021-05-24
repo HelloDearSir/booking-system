@@ -40,15 +40,7 @@ function Todo() {
     function addTodo(e) {
         e.preventDefault();
         
-            store.addNotification({
-                title:"new todo",
-                message:"added a new todo",
-                type:"info",
-                container:"top-right",
-                insert:"top"
-             
-            });
-        
+           
        
         const newTodo = {
             text: Todo.text,
@@ -57,20 +49,32 @@ function Todo() {
 
         axios.post('/newtodo', newTodo);
     }
-
+  
+    function DeleteToDo(id){
+        axios.delete('/deleting/' + id);
+        store.addNotification({
+            title:"new todo",
+            message:"Congrats on completing the task",
+            type:"info",
+            container:"top-right",
+            insert:"top"
+        });
+    
+    }
   
 
     return (
         <div>
         <ReactNotification/>
+        <h1> Todo List</h1>
         <Form>
                 <Container>
                     <Row>
-                        <Col>
-                            <Form.Control required  size="sm" onChange={handleChange} name="text" value={Todo.text} />
+                        <Col md="6">
+                            <Form.Control required className="text-center" size="sm" onChange={handleChange} name="text" value={Todo.text} />
                         </Col>
-                        <Col>
-                            <Button onClick={addTodo}>ADD MOVIE</Button>
+                        <Col md ="4">
+                            <Button className="postionButtons" onClick={addTodo}>ADD MOVIE</Button>
                         </Col>
                     </Row>
                 </Container>
@@ -79,8 +83,18 @@ function Todo() {
             {Todos.map(todo => {
                 return (
                     <div>
-                    <p>{todo.text}</p>
+                        
+                        <Container>
+                        <Row>
+                        <Col md ="8"> 
+                        <p>{todo.text}</p>
+                          </Col>  
+                         <Col md ="3">  
+                    <Button className="postionButton" onClick={() => DeleteToDo(todo._id)}>DELETE</Button> </Col>  
                   
+                        </Row>
+                        </Container>
+                    
                     </div>
                 )
             })}
