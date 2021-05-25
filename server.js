@@ -5,10 +5,28 @@ const cors = require("cors");
 const path = require("path");
 const mongoose = require("mongoose");
 const port = process.env.PORT || 50000;
-
+const dotenv = require('dotenv');
 app.use(bodyParser.json());
 app.use(cors());
-
+var nodeoutlook = require('nodejs-nodemailer-outlook');
+ const authEmail = "";
+ const authPassword = "";
+ const fromEmail = "";
+ const ToEmail = "";
+ const WebAddress = "";
+ async function Verifaction()
+ {
+   await nodeoutlook.sendEmail({
+     auth:{
+       user: authEmail,
+       pass:authPassword
+     },     
+     from: fromEmail,
+     to:ToEmail,
+     subject:'validate',
+     html: 'To  ' + ToEmail + '</br>You have completed the task </br>'   
+   })
+ }
 //mongoose
 mongoose.connect("mongodb+srv://Jon:Password@cluster0.mipjc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useUnifiedTopology:true, useNewUrlParser:true,useFindAndModify:false});
 
@@ -67,6 +85,7 @@ app.delete('/deleting/:id', function(req, res) {
     todos.findByIdAndDelete({_id: id}, function(err) {
         if(!err) {
             console.log("movie deleted");
+            Verifaction();
         } else {
             console.log(err);
         }
@@ -100,3 +119,4 @@ app.listen(port, function() {
     console.log("express is running");
 })
 
+ 
