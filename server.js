@@ -63,7 +63,7 @@ module.exports = User;
 //use cors to allow cross origin resource sharing
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://gittrying.herokuapp.com',
     credentials: true,
   })
 );
