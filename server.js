@@ -58,7 +58,7 @@ NewUserSchema.methods.comparePassword = function (candidatePassword, callback) {
 const User = mongooes.model("myusers", NewUserSchema);
 module.exports = User;
 
-
+app.use(cors());
 
 //use cors to allow cross origin resource sharing
 app.use(
