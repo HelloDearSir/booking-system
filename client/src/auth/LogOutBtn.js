@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
+import AuthContext from "../context/AuthContext";
 
 function LogOutBtn() {
   const { getLoggedIn } = useContext(AuthContext);
@@ -17,5 +17,5 @@ function LogOutBtn() {
 
   return <button onClick={logOut}>Log out</button>;
 }
-
+  
 export default LogOutBtn;

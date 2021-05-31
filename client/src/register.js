@@ -1,7 +1,5 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { useHistory } from "react-router";
- 
  
 
 function Register() {
@@ -24,8 +22,7 @@ function Register() {
         passwordVerify,
       };
 
-      await axios.post("/auth/", registerData);
-     
+      await axios.post("/register", registerData);
  
     } catch (err) {
       console.error(err);
