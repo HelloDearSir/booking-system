@@ -1,0 +1,52 @@
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
+ 
+import { useParams } from "react-router-dom";
+
+
+ 
+    function datas(props) {
+      const { ids } = useParams();
+        const [users, setUsers] = useState([]);
+     
+        useEffect(() => {
+          axios
+              .get('/users')
+              .then(res => {
+                  .then(res => setUsers(res.data.tests))
+        .catch(error => console.log(error)); 
+              })
+              .catch(error => console.log(error))
+      },[])
+    return (
+    
+    <div className="App">
+   
+
+       
+      <div className="books">
+        {users &&
+          users.map((book, index) => {
+            //const cleanedDate = new Date(book.released).toDateString();
+          
+
+            return (
+              <div className="book" key={index}>
+               
+                
+              <link ro 
+                <div className="details">
+                  <h3> {book._id}</h3>
+                  <h3> {book.firstName}</h3>
+                  <h3> {book.lastName} </h3>
+                  
+                </div>
+              </div>
+            );
+          })}
+      </div>
+  </div>
+    )
+}
+
+export default datas;

@@ -12,17 +12,35 @@ code {
     monospace;
 }
 
-
-.btn:hover, .btn-large:hover, .btn-small:hover,.btn, .btn-large, .btn-small {
-  background-color: #265a88 !important;
-  background-position: 0 -15px;
-} 
-
-.postionButtons {
-  margin-top: 15px;
+.books {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.postionButton {
-  margin-top: -9px;
+.book {
+  background: #fff;
+  position: relative;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  width: 47%;
+  color: #333;
+  flex-basis: width;
+  background-color: rgb(165, 230, 230);
 }
- 
+
+.book h3 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+.book h2 {
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.details {
+  text-align: left;
+}
