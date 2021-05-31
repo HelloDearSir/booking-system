@@ -10,7 +10,7 @@ salt_work_factor = 10;
 require("dotenv").config();
 app.use(
   cors({
-    origin: 'https://morning-journey-91679.herokuapp.com',
+    origin: 'https://gittrying.herokuapp.com',
     credentials: true,
   })
 );
