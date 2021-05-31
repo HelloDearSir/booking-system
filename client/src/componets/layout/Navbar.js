@@ -7,24 +7,26 @@ function  Navbar()
 {
 const { loggedIn } = useContext(AuthContext);
 
-    return <div>
-  <Link to="/">Home</Link>
-  {loggedIn === false && (
-        <>
-          <Link to="/register">Register</Link>
-          <Link to="/login">Log in</Link>
-        </>
-      )}
-
-{loggedIn === true && (
-        <>
-  <Link to= "/CurrentDAta"> CurrentData</Link>
-  <Link to="/counter"> Counter</Link>
-  <LogOutBtn/>
-
-
-  </>
-)}
-    </div>
+return <div>
+<nav>
+  <ul>
+   <li> <Link to="/">Home</Link> </li>
+    {loggedIn === false && (
+      <>
+       <li><Link to="/register">Register</Link></li> 
+       <li> <Link to="/login">Log in</Link> </li> 
+      </>
+    )}
+    {loggedIn === true && (
+      <>
+      <li><Link to="/CurrentDAta"> CurrentData</Link> </li> 
+      <li><Link to="/counter"> Counter</Link> </li>
+      <li><LogOutBtn /></li>  
+      </>
+    )}
+  </ul>
+</nav>
+</div>
 }
+
 export default Navbar;
