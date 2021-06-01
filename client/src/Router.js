@@ -17,6 +17,7 @@ function Router() {
         <Route exact path="/">
           <div>Home</div>
         </Route>
+   //when they are logged out they will see theser on their nav
         {loggedIn === false && (
           <>
             <Route path="/register">
