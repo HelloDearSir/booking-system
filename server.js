@@ -4,10 +4,11 @@ const cors = require('cors');
 const mongoose = require('mongoose');
  const path = require('path')
 const app = express();
- 
+ //timestapming is good
 const { Timestamp } = require('bson');
 salt_work_factor = 10;
 require("dotenv").config();
+//wityhout this i cant login
 app.use(
   cors({
     origin: 'https://gittrying.herokuapp.com',
