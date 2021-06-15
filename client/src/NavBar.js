@@ -13,12 +13,14 @@ return <div>
    <li> <Link to="/">Home</Link> </li>
     {loggedIn === false && (
       <>
+      <li> <Link to="/">Home</Link> </li>
        <li><Link to="/register">Register</Link></li> 
        <li> <Link to="/login">Log in</Link> </li> 
       </>
     )}
     {loggedIn === true && (
       <>
+        <li> <Link to="/">Home</Link> </li>
       <li><Link to="/CurrentDAta"> CurrentData</Link> </li> 
       <li><Link to="/counter"> Counter</Link> </li>
       <li><LogOutBtn /></li>  

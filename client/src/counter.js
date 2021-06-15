@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import axios from 'axios';
 
 class counter extends Component {
@@ -41,6 +41,7 @@ class counter extends Component {
       .catch(err => {
         console.error(err);
       });
+      [e.target.name] =  '';
   };
 
   render() {
@@ -94,7 +95,7 @@ class counter extends Component {
                 type="text"
                 className="form-control"
                 name="tutor"
-                placeholder="location"
+                placeholder="Tutor"
                 onChange={this.handleInputChange}
               />
             </div>

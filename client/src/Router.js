@@ -14,11 +14,12 @@ function Router() {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route exact path="/">
-          <div>Home</div>
-        </Route>
+        
         {loggedIn === false && (
           <>
+          <Route exact path="/">
+          <div>Home</div>
+        </Route>
             <Route path="/register">
               <Register />
             </Route>
@@ -30,6 +31,9 @@ function Router() {
         )}
         {loggedIn === true && (
           <>
+          <Route exact path="/">
+          <div>Profile Page</div>
+        </Route>
             <Route path="/currentDAta">
               <CurrentDAta />
             </Route>
