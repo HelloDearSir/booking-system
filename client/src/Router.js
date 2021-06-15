@@ -14,7 +14,14 @@ function Router() {
     <BrowserRouter>
       <Navbar />
       <Switch>
+<<<<<<< HEAD
         
+=======
+        <Route exact path="/">
+          <div>Home</div>
+        </Route>
+   //when they are logged out they will see theser on their nav
+>>>>>>> 53d3a12cbb6483108b2bce5a5dbed2fec553b438
         {loggedIn === false && (
           <>
           <Route exact path="/">
