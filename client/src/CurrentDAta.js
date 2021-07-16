@@ -35,8 +35,7 @@ function CurrentDAta(props) {
                   return (
                     
                       <tr key={_id}>
-                       <td> <Link to ={`/datas/${_id}`} name="Edit" className="btn">
-                            Edit </Link> </td>
+                      
                 
                           <td>{firstName}</td>
                           <td>{lastName}</td>
