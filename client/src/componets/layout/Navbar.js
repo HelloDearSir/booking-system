@@ -20,7 +20,7 @@ return <div>
     {loggedIn === true && (
       <>
       <li><Link to="/CurrentDAta"> CurrentData</Link> </li> 
-      <li><Link to="/counter"> Counter</Link> </li>
+      <li><Link to="/booking"> booking</Link> </li>
       <li><LogOutBtn /></li>  
       </>
     )}
