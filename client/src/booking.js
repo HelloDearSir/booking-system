@@ -105,7 +105,7 @@ class counter extends Component {
                 type="date"
                 className="form-control"
                 name="time"
-                placeholder="location"
+                placeholder="time"
                 onChange={this.handleInputChange}
               />
             </div>
