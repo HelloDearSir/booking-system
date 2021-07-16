@@ -6,7 +6,7 @@ import Register from "./componets/auth/Register";
 import Navbar from "./componets/layout/Navbar";
 import AuthContext from "./context/AuthContext";
 import CurrentDAta from "./CurrentDAta";
-import counter from "./counter";
+import booking from "./booking";
 function Router() {
   const { loggedIn } = useContext(AuthContext);
 
@@ -14,14 +14,11 @@ function Router() {
     <BrowserRouter>
       <Navbar />
       <Switch>
-<<<<<<< HEAD
-        
-=======
+ 
         <Route exact path="/">
           <div>Home</div>
         </Route>
-   //when they are logged out they will see theser on their nav
->>>>>>> 53d3a12cbb6483108b2bce5a5dbed2fec553b438
+ 
         {loggedIn === false && (
           <>
           <Route exact path="/">
