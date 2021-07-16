@@ -122,4 +122,4 @@ class counter extends Component {
   }
 }
 
-export default counter;
+export default booking;
