@@ -20,9 +20,7 @@ const Booking = require("./models/Booking");
 mongoose.connect('mongodb+srv://Jon:Password@cluster0.mipjc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 const port = process.env.PORT || 5000;   
   
-  app.get('/todo', function(req,res){
-    res.send({tests})
-  })
+  
 
 
   app.use(express.json());
