@@ -177,7 +177,7 @@ router.get("/loggedIn", (req, res) => {
 });
 
 
-router.post("/createMovies", function (req, res) {
+router.post("/createbooking", function (req, res) {
   var MovieTitles = req.body.firstName;
   var Description = req.body.lastName;
   var emails = req.body.email;
@@ -185,17 +185,17 @@ router.post("/createMovies", function (req, res) {
   var tutor = req.body.tutor
   var time = req.body.time;
  
-  var NewMovie = new Booking();
+  var NewBook = new Booking();
 
-  NewMovie.firstName = MovieTitles;
-  NewMovie.lastName = Description;
-  NewMovie.email = emails; 
-  NewMovie.Location = location;
-  NewMovie.Tutor = tutor;
-  NewMovie.Time = time;
+  NewBook.firstName = MovieTitles;
+  NewBook.lastName = Description;
+  NewBook.email = emails; 
+  NewBook.Location = location;
+  NewBook.Tutor = tutor;
+  NewBook.Time = time;
  
 
-  NewMovie.save(function (err, saveduser) {
+  NewBook.save(function (err, saveduser) {
     if (err) {
       console.log(err);
     }
@@ -210,17 +210,17 @@ router.post("/createMovies", function (req, res) {
         }
         if( eusers)
         {
-         Testing = eusers
+         NewUsers= eusers
         }
       })
     }
 
 
-  console.log(MovieTitles, Description, tutor);
+ 
 })
 })
     router.get('/users', function(req,res){
-      res.json({Testing});
+      res.json({NewUsers});
   })
  
 
